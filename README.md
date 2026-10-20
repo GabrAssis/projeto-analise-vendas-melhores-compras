@@ -1,114 +1,58 @@
-# Melhores Compras | Análise de Vendas e Machine Learning
-### Python e Power BI
+# Melhores Compras | Análise de Vendas
 
-Projeto acadêmico de análise de vendas semanais com Python, comparação de modelos de regressão e apresentação dos resultados em Power BI. Desenvolvido pelo **Grupo 68**, em 2024, no PBL da fase 7 do 2º ano.
+**Exploração de vendas semanais, comparação de modelos de regressão e apresentação em Power BI.**
 
-[Notebook](notebooks/modelagem_vendas.ipynb) · [Relatório original](reports/relatorio_grupo68.pdf) · [Dashboard Power BI](powerbi/dashboard_vendas.pbix) · [Notas metodológicas](docs/notas_metodologicas.md)
+Projeto acadêmico desenvolvido pelo **Grupo 68**, em 2024, no PBL da fase 7 do 2º ano. A entrega combina análise exploratória em Python, experimentos de machine learning e comunicação visual dos resultados.
+
+[Notebook](notebooks/modelagem_vendas.ipynb) · [Power BI](powerbi/dashboard_vendas.pbix) · [Relatório](reports/relatorio_grupo68.pdf) · [Guia técnico](docs/execucao.md)
 
 ## Problema de negócio
 
-Como analisar o comportamento das vendas semanais e comparar modelos capazes de estimá-las a partir das variáveis disponíveis?
+Como explorar o comportamento das vendas semanais e comparar estimativas a partir das variáveis disponíveis?
 
-O trabalho explora tendências, feriados e variáveis econômicas, compara algoritmos de regressão e apresenta os resultados em um relatório e em um dashboard. A publicação preserva os materiais acadêmicos originais; não representa um sistema de previsão em produção.
+O estudo investiga o histórico de vendas, feriados e indicadores econômicos, utilizando gráficos e modelos de regressão para apoiar a interpretação dos dados.
 
-## Etapas do projeto
+## Entregas
 
-1. Leitura e preparação dos dados, incluindo conversão de datas e ajustes de escala.
-2. Verificação de duplicidades e valores ausentes.
-3. Análise exploratória, gráficos de dispersão e correlações.
-4. Criação da variável de semana do ano.
-5. Comparação entre Random Forest, SVR, Regressão Linear e XGBoost.
-6. Avaliação por métricas de regressão, validação cruzada e configuração de hiperparâmetros.
-7. Apresentação dos resultados com Power BI.
-
-## Visualização dos estudos
-
-### Evolução das vendas
-
-![Vendas semanais com linha de tendência](assets/vendas_semanais.png)
-
-### Comparação inicial dos modelos
-
-![Comparação dos modelos por MAE e R²](assets/comparacao_modelos.png)
-
-As imagens foram extraídas das saídas salvas no notebook original, sem reexecução.
-
-## Resultados registrados no notebook
-
-| Modelo | R² no teste |
-| --- | ---: |
-| Regressão Linear | 0,02 |
-| SVR | -0,10 |
-| Random Forest | 0,40 |
-| XGBoost inicial | 0,66 |
-| XGBoost com hiperparâmetros configurados | 0,7215 |
-
-Esses valores são **resultados históricos das saídas salvas**. A base tem 143 observações e a divisão usada no notebook é aleatória, com 80% para treino e 20% para teste. Eles não comprovam capacidade de prever semanas futuras.
-
-O alvo foi padronizado antes da divisão: os erros apresentados no notebook não estão na unidade monetária original. Há também divergências entre o relatório e o notebook, detalhadas nas [notas metodológicas](docs/notas_metodologicas.md).
-
-## Dados
-
-O notebook lê um arquivo chamado **`sales.csv`**, que **não foi fornecido nesta publicação**. Para reexecutá-lo, obtenha a base original e coloque-a na pasta `notebooks/`.
-
-| Coluna esperada | Descrição |
+| Frente | Conteúdo |
 | --- | --- |
-| `Date` | Data da observação semanal. |
-| `Weekly_Sales` | Valor de vendas semanais; variável alvo. |
-| `Holiday_Flag` | Indicador de feriado na semana. |
-| `Temperature` | Temperatura registrada. |
-| `Fuel_Price` | Preço de combustível, conforme a escala da base. |
-| `CPI` | Índice econômico fornecido na base. |
-| `Unemployment` | Indicador de desemprego, conforme a escala da base. |
+| Preparação dos dados | Conversão de datas, ajustes de escala e verificação de duplicidades e valores ausentes. |
+| Análise exploratória | Evolução semanal, gráficos de dispersão e correlações. |
+| Engenharia de atributos | Construção da variável de semana do ano. |
+| Modelagem | Comparação entre Regressão Linear, SVR, Random Forest e XGBoost. |
+| Avaliação dos experimentos | Métricas de regressão e validação cruzada registradas no notebook. |
+| Comunicação | Relatório acadêmico e dashboard com as páginas Home, Visão Geral e Insights. |
 
-As saídas salvas indicam dados entre fevereiro de 2010 e outubro de 2012. A origem e a licença da base não acompanham os arquivos recebidos; nenhum dataset foi substituído ou reconstruído.
+## Visualizações
 
-## Como consultar e executar
+### Evolução das vendas semanais
 
-### Notebook
+![Histórico de vendas semanais com linha de tendência](assets/vendas_semanais.png)
 
-É possível visualizar o notebook diretamente no GitHub, incluindo seus gráficos e resultados salvos.
+### Comparação dos modelos
 
-Para execução local, use preferencialmente **Python 3.10**, versão observada no ambiente original. Na raiz do projeto:
+![Comparação exploratória dos modelos por MAE e R²](assets/comparacao_modelos.png)
 
-```powershell
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-cd notebooks
-python -m jupyterlab .
-```
+Visualizações extraídas das saídas registradas no notebook acadêmico.
 
-Abra `modelagem_vendas.ipynb`, disponibilize `sales.csv` na mesma pasta e execute as células na ordem. O notebook mantém sua célula original de instalação de dependências.
+## Competências demonstradas
 
-As versões das seis bibliotecas principais foram recuperadas dos logs salvos. O ambiente completo não foi reconstruído nem testado, pois a base CSV está ausente.
+- Preparação e exploração de dados com pandas e NumPy.
+- Visualização com Matplotlib e Seaborn.
+- Construção e comparação de modelos de regressão.
+- Leitura de métricas e discussão de metodologia.
+- Apresentação de análises em Power BI e relatório técnico.
 
-### Power BI
+## Tecnologias
 
-Baixe [dashboard_vendas.pbix](powerbi/dashboard_vendas.pbix) e abra no Power BI Desktop. O arquivo contém as páginas **Home**, **Visão Geral** e **Insights**.
+Python · pandas · NumPy · Matplotlib · Seaborn · scikit-learn · XGBoost · Power BI
 
-Para atualizar os dados, revise as fontes e os caminhos configurados no Power BI. O arquivo foi inspecionado estruturalmente; não foi aberto nem validado no Power BI Desktop durante a preparação desta publicação.
+## Explorar o projeto
 
-## Organização
+O [notebook](notebooks/modelagem_vendas.ipynb) pode ser consultado no GitHub com gráficos e saídas salvas. Para reexecutá-lo, é necessária a base original `sales.csv`. O [guia técnico](docs/execucao.md) descreve o ambiente e a estrutura esperada dos dados.
 
-| Caminho | Conteúdo |
-| --- | --- |
-| `notebooks/modelagem_vendas.ipynb` | Notebook original de análise e modelagem. |
-| `powerbi/dashboard_vendas.pbix` | Dashboard original do Power BI. |
-| `reports/relatorio_grupo68.pdf` | Relatório acadêmico original. |
-| `assets/` | Gráficos extraídos do notebook para apresentar o projeto. |
-| `docs/notas_metodologicas.md` | Limitações e divergências identificadas na documentação. |
-| `requirements.txt` | Bibliotecas para preparar um ambiente de execução. |
-
-## Possíveis evoluções
-
-- Disponibilizar a base original, após confirmar sua licença de redistribuição.
-- Separar treino e teste respeitando a ordem temporal.
-- Ajustar os transformadores somente no treino, usando pipelines.
-- Comparar os modelos com uma previsão ingênua e uma referência sazonal.
-- Avaliar os erros na unidade original das vendas.
-- Revisar o relatório e atualizar as fontes do Power BI.
+O [dashboard](powerbi/dashboard_vendas.pbix) está disponível para abertura no Power BI Desktop. Os critérios de interpretação dos experimentos estão nas [notas metodológicas](docs/notas_metodologicas.md).
 
 ## Contexto e autoria
 
-Material acadêmico do **Grupo 68**, publicado no portfólio de Gabriel de Assis. A publicação organiza e documenta os arquivos recebidos, preservando o notebook, o relatório e o PBIX sem alterar seus bytes. Não foi adicionada uma licença de redistribuição aos materiais originais.
+Trabalho acadêmico do **Grupo 68**, publicado no portfólio de Gabriel de Assis. Notebook, relatório e dashboard preservam a entrega original. A análise tem caráter exploratório; os experimentos e seus resultados devem ser interpretados no contexto documentado.
