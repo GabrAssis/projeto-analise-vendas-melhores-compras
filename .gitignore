@@ -1,0 +1,23 @@
+# Ambientes e credenciais
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Cache e arquivos locais
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Base não incluída nesta publicação
+sales.csv
+
+# Arquivos temporários de ferramentas
+~$*
+*.tmp

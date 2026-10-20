@@ -1,0 +1,10 @@
+# Versões registradas nos logs do notebook original (2024).
+# scipy e jupyterlab não tiveram versões registradas nesses logs.
+pandas==2.2.2
+numpy==1.26.4
+matplotlib==3.8.0
+seaborn==0.13.2
+scikit-learn==1.5.2
+xgboost==2.1.2
+scipy
+jupyterlab
