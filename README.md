@@ -1,7 +1,7 @@
-# Análise Preditiva de Vendas — Melhores Compras
-### Machine Learning e Power BI
+# Melhores Compras | Análise de Vendas e Machine Learning
+### Python e Power BI
 
-Projeto acadêmico do **Grupo 68**, desenvolvido em 2024 no PBL da fase 7 do 2º ano, voltado à análise de vendas semanais do case Melhores Compras. Reúne análise exploratória em Python, comparação de modelos de regressão e um dashboard em Power BI.
+Projeto acadêmico de análise de vendas semanais com Python, comparação de modelos de regressão e apresentação dos resultados em Power BI. Desenvolvido pelo **Grupo 68**, em 2024, no PBL da fase 7 do 2º ano.
 
 [Notebook](notebooks/modelagem_vendas.ipynb) · [Relatório original](reports/relatorio_grupo68.pdf) · [Dashboard Power BI](powerbi/dashboard_vendas.pbix) · [Notas metodológicas](docs/notas_metodologicas.md)
 
